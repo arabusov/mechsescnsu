@@ -1,0 +1,46 @@
+\documentclass[a5paper,12pt]{memoir}
+\semiisopage
+\medievalpage[12]
+%\chapterstyle{madsen}
+\setlength{\headwidth}{0.8\textwidth}
+\addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+\pagestyle{companion}
+\usepackage{graphicx,caption}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+%\usepackage{statmodtitle}
+\usepackage[top=1.5cm,bottom=1.5cm]{geometry}
+\graphicspath{{images/}}
+\newtheorem{definition}{Определение}
+\newtheorem{axiom}{Постулат}
+\newtheorem{theorem}{Теорема}
+\newtheorem{example}{Пример}
+\newtheorem{task}{Задача}
+\newcommand{\solution}{\proof[Решение]}
+
+\title{Физика в ЛШ СУНЦ НГУ}
+%\author{Рабусов Андрей}
+\date{\today}
+%\subtitle{Курсовая работа, атомный практикум}
+%\chief{Эйдельман Семён Исаакович}
+%\setlength{\topmargin}{-5mm}
+%\setlength{\textwidth}{15.7cm}
+\includeonly{abstract,math-intro,kinematics,dynamics,statics,save-laws}
+\begin{document}
+\maketitle
+\input{abstract}
+\newpage
+\tableofcontents
+\input{math-intro}
+\input{kinematics}
+\input{save-laws}
+\input{dynamics}
+\input{statics}
+
+\end{document}

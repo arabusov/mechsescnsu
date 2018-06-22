@@ -1,0 +1,95 @@
+\chapter{Законы сохранения}
+Продолжим развитие теории предельных переходов, потому что нам
+эти знания нужны для выводов законов сохранения.
+Рассмотрим более сложный случай, когда функция зависит от нескольких
+переменных, например $f=f(x,y,z).$ 
+Также как и ранее будем рассмотривать только те функции, которые можно представить
+в виде ряда $f(x,y,z) = \sum\limits_{i}\sum\limits_{j}
+\sum\limits_{k}c_{ijk} (x-x_0)^i(y-y_0)^j(z-z_0)^k,$ при этом
+ряд может быть как конечным, так и бесконченым.
+Этот ряд можно переписать в виде $f(x,y,z) = c_{000}
++c_{100}(x-x_0) + c_{010} (y-y_0) + c_{001} (z-z_0) + 
++c_{200}(x-x_0)^2 + c_{020} (y-y_0)^2 + c_{002} (z-z_0)^2 + 
++c_{110}(x-x_0)(y-y_0) + c_{011} (y-y_0)(z-z_0) + c_{101} (z-z_0)(x-x_0) + \dots.$
+Как и ранее введём обозначения 
+$\Delta x = x-x_0,$
+$\Delta y = y-y_0,$
+$\Delta z = z-z_0.$
+Ясно, что при $x=x_0,$ $y=y_0,$ $z=z_0$ $f(x,y,z)=f(x_0,y_0,z_0)$ и 
+$f(x,y,z) = c_{000},$ откуда $c_{000} = f(x_0,y_0,z_0).$
+Тогда 
+\begin{equation}
+\label{eq:full_add}
+\begin{split}
+\Delta f 
+=&c_{100}(x-x_0) + c_{010} (y-y_0) + c_{001} (z-z_0)  +\\
++&c_{200}(x-x_0)^2 + c_{020} (y-y_0)^2 + c_{002} (z-z_0)^2  +\\
++&c_{110}(x-x_0)(y-y_0)+c_{011} (y-y_0)(z-z_0)+\\
++&c_{101} (z-z_0)(x-x_0) + \dots  %=\\
+%=&c_{100}(x-x_0) + c_{010} (y-y_0) + c_{001} (z-z_0)  +\\
+%+&\alpha \Delta x + \beta \Delta y + \gamma \Delta z,
+\end{split}
+\end{equation}
+%при этом
+%$\alpha, \beta, \gamma \to 0$ при $\Delta x, \Delta y, \Delta z \to 0.$
+Будем понимать под выражением $\lim\limits_{\Delta \xi \to 0}$ случай, когда
+$\xi \to 0,$ и при этом остальные переменные не варьируются. Имеем тогда
+$\lim\limits_{\Delta x \to 0} \frac{\Delta f(x,y,z)}{\Delta x} = c_{100},$
+$\lim\limits_{\Delta y \to 0} \frac{\Delta f(x,y,z)}{\Delta y} = c_{010},$
+$\lim\limits_{\Delta z \to 0} \frac{\Delta f(x,y,z)}{\Delta z} = c_{001}.$
+Положим теперь, что  $x = x(t),$ $y=y(t),$ $z=z(t).$ Нас интересует
+выражение 
+$\lim\limits_{\Delta t \to 0} \frac{\Delta f(x,y,z)}{\Delta t}.$
+Представим функции $x(t), y(t), z(t)$ в виде рядов:
+$x(t) = x(t_0) + \lim \limits_{\Delta t \to 0} \frac {\Delta x (t)} {\Delta t} \Delta t + \theta_x \Delta^2 t ,$
+$y(t) = y(t_0) + \lim \limits_{\Delta t \to 0} \frac {\Delta y (t)} {\Delta t} \Delta t + \theta_y \Delta^2 t ,$
+$x(t) = z(t_0) + \lim \limits_{\Delta t \to 0} \frac {\Delta z (t)} {\Delta t} \Delta t + \theta_z \Delta^2 t ,$
+$\theta_x, \theta_y, \theta_z$ --- некие функции $t_0.$
+Подставим $x, y, z$ 
+ в таком виде в 
+$\lim\limits_{\Delta t \to 0} \frac{\Delta f(x,y,z)}{\Delta t},$
+получим из (\ref{eq:full_add})
+\begin{equation}
+\label{eq:complex_diff}
+\begin{split}
+\lim\limits_{\Delta t \to 0} \frac{\Delta f(x,y,z)}{\Delta t} &=\\ 
+&\lim\limits_{\Delta x \to 0} \frac{\Delta f(x,y,z)}{\Delta x} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta x}{\Delta t}+ \\
+&\lim\limits_{\Delta y \to 0} \frac{\Delta f(x,y,z)}{\Delta y} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta y}{\Delta t}+ \\
+&\lim\limits_{\Delta z \to 0} \frac{\Delta f(x,y,z)}{\Delta z} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta z}{\Delta t}.
+\end{split}
+\end{equation}
+\section{Закон сохранения энергии и импульса}
+Вообще говоря уравнения движения и законы сохранения выводятся из более общего принципа
+наименьшего действия. Однако мы за постулат возьмём закон сохранения энергии.\par
+Пусть у нас есть система (различных) материальных точек (частиц) и пусть эта система не взаиможействует
+с внешними материальными точками (внешних частиц либо нет, либо их воздействием можно
+пренебречь). Введём некую векторную динамическую характеристику каждой частицы $\vec{p}$ (импульс).
+В случае, если внутри системы материальные точки не взаимодействуют, утверждается, что
+сохраняется величина $E = \sum\limits_{i} T_i = \sum\limits_{i} \alpha_i \vec{p_i}^2,$
+которая называется полной энергией системы. $T_i = \alpha_i \vec{p_i}^2$ --- кинетическая
+энергия $i$-й материальной точки, $\alpha_i$ --- некоторый коэффициент, характеризующий
+$i$-ю материальную точку. В случае, если частицы системы взаимодействуют друг с другом,
+часто можно ввести понятия энергии взаимодействия $U=U(\vec{r_1},\vec{r_2},\dots,\vec{r_n})$
+как добавку к суммарной кинетичской энергии; постулируется, что сохраняется
+величина $E = \sum\limits_{i} T_i + U(\vec{r_1},\vec{r_2},\dots,\vec{r_n}),$ которая в данном случае
+называется полной энергией.\par
+Снова вернёмся к случаю невзаимодействующих частиц.
+Так как $E = const,$ то $\lim\limits_{\Delta t \to 0} \frac{\Delta E}{\Delta t} = 0.$
+Найдём выражение для $\lim\limits_{\Delta t \to 0} \frac{\Delta \vec{p_i}}{\Delta t}.$
+Воспользуемся выражением (\ref{eq:complex_diff}), получим
+$\lim\limits_{\Delta t \to 0} \frac{\Delta \vec{p_i}(x,y,z)}{\Delta t} =
+\lim\limits_{\Delta x \to 0} \frac{\Delta \vec{p_i}(x,y,z)}{\Delta x} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta x}{\Delta t}+ \\
+\lim\limits_{\Delta y \to 0} \frac{\Delta \vec{p_i}(x,y,z)}{\Delta y} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta y}{\Delta t}+ \\
+\lim\limits_{\Delta z \to 0} \frac{\Delta \vec{p_i}(x,y,z)}{\Delta z} 
+\lim\limits_{\Delta t \to 0} \frac{\Delta z}{\Delta t}.$
+Мы знаем, что
+$\vec{v} = \lim\limits_{\Delta t \to 0} \frac{\Delta \vec{r}}{\Delta t},$
+или покомпонентно
+${v_x} = \lim\limits_{\Delta t \to 0} \frac{\Delta x}{\Delta t},$
+${v_y} = \lim\limits_{\Delta t \to 0} \frac{\Delta y}{\Delta t},$
+${v_z} = \lim\limits_{\Delta t \to 0} \frac{\Delta z}{\Delta t},$ 
